@@ -70,11 +70,11 @@ function Product() {
           <div className="loader"></div>
         </div>
       ) : (
-        <div className="products">
+        <div className="products row">
           {products &&
             products.map((product) => {
               return (
-                <div className="all-parent">
+                <div className="all-parent col-md-3 col-sm-4 col-xs-6">
                   <div className="product card" key={product.id}>
                     <h3 className="product-name">{product.name}</h3>
                     <div className="product-details">
@@ -93,7 +93,7 @@ function Product() {
                                   float: "left",
                                   "border-radius": "50%",
                                   "margin-right": "8px",
-                                  color: "#ffff",
+                                  border: "0.5px solid red",
                                 }}
                               ></div>
                             );
