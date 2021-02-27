@@ -1,0 +1,21 @@
+.sidebar-categories {
+    padding: 12px;
+    font-size: 1.2rem;
+    float: left;
+    width: 30%;
+    height: 100%;
+}
+
+.cat-items {
+    margin-left: 8px;
+    display: grid;
+    list-style: none;
+    justify-content: start;
+    padding: 8px;
+}
+
+.cat-items li a {
+    display: inherit;
+    width: 200px;
+    margin: 5px 0px;
+}

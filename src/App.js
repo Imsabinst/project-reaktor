@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Navbar from "./components/navbar/Navbar";
+import Sidebar from "./components/sidebar/Sidebar";
+import { Switch, Route } from "react-router-dom";
+import Product from "./components/products/Product";
 
+const categories = [
+  {
+    name: "Gloves",
+    path: "/gloves",
+  },
+  {
+    name: "Face Masks",
+    path: "/facemasks",
+  },
+  {
+    name: "Beanies",
+    path: "/beanies",
+  },
+];
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <div className="sidebar-main">
+        <div className="sidebar-cat">
+          <Sidebar categories={categories} />
+        </div>
+
+        <div className="main-container">
+          <Switch>
+            <Route path="*" component={Product} />
+          </Switch>
+        </div>
+      </div>
     </div>
   );
 }
