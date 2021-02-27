@@ -10,7 +10,7 @@ const categories = [
     path: "/gloves",
   },
   {
-    name: "Face Masks",
+    name: "Facemasks",
     path: "/facemasks",
   },
   {
@@ -22,15 +22,17 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <div className="sidebar-main">
-        <div className="sidebar-cat">
-          <Sidebar categories={categories} />
-        </div>
+      <div className="sidebar-main container">
+        <div className="row">
+          <div className="sidebar-cat col-2">
+            <Sidebar categories={categories} />
+          </div>
 
-        <div className="main-container">
-          <Switch>
-            <Route path="*" component={Product} />
-          </Switch>
+          <div className="main-container col-10">
+            <Switch>
+              <Route path="*" component={Product} />
+            </Switch>
+          </div>
         </div>
       </div>
     </div>
